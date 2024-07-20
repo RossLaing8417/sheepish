@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sheepish.Web", "Sheepish.Web\Sheepish.Web.csproj", "{558B9371-36BA-4D68-A615-F52668D51297}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{558B9371-36BA-4D68-A615-F52668D51297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{558B9371-36BA-4D68-A615-F52668D51297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{558B9371-36BA-4D68-A615-F52668D51297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{558B9371-36BA-4D68-A615-F52668D51297}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {630E3CA7-3981-4D2F-B56F-5D6196FE4D19}
+	EndGlobalSection
+EndGlobal
