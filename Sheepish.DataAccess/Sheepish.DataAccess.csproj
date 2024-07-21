@@ -13,9 +13,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Sheepish.DataAccess\Sheepish.DataAccess.csproj" />
-    <ProjectReference Include="..\Sheepish.Entities\Sheepish.Entities.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -5,6 +5,10 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sheepish.Web", "Sheepish.Web\Sheepish.Web.csproj", "{558B9371-36BA-4D68-A615-F52668D51297}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sheepish.Entities", "Sheepish.Entities\Sheepish.Entities.csproj", "{181F99A8-DD5A-4B81-9189-F8EC65629E0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sheepish.DataAccess", "Sheepish.DataAccess\Sheepish.DataAccess.csproj", "{AE5014A8-B9E6-4D72-8F93-1BB87D195844}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{558B9371-36BA-4D68-A615-F52668D51297}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{558B9371-36BA-4D68-A615-F52668D51297}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{558B9371-36BA-4D68-A615-F52668D51297}.Release|Any CPU.Build.0 = Release|Any CPU
+		{181F99A8-DD5A-4B81-9189-F8EC65629E0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{181F99A8-DD5A-4B81-9189-F8EC65629E0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{181F99A8-DD5A-4B81-9189-F8EC65629E0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{181F99A8-DD5A-4B81-9189-F8EC65629E0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE5014A8-B9E6-4D72-8F93-1BB87D195844}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE5014A8-B9E6-4D72-8F93-1BB87D195844}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE5014A8-B9E6-4D72-8F93-1BB87D195844}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE5014A8-B9E6-4D72-8F93-1BB87D195844}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
