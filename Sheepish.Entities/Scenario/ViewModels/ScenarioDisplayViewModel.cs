@@ -1,4 +1,4 @@
-﻿namespace Sheepish.Entities.Scenario.ViewModels
+﻿namespace Sheepish.Entities.ViewModels
 {
     public class ScenarioDisplayViewModel
     {
