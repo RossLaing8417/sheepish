@@ -1,10 +1,13 @@
 using Sheepish.DataAccess;
+using Sheepish.DataAccess.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.RegisterDataServices(builder.Configuration);
+
+builder.Services.AddTransient<ISheepishDataService, SheepishDataService>();
 
 var app = builder.Build();
 

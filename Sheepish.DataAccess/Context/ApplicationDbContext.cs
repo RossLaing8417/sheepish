@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Sheepish.Entities.Scenario;
+using Sheepish.Entities;
 
 namespace Sheepish.DataAccess.Context
 {
