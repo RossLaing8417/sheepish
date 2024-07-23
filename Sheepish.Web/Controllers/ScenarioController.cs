@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Sheepish.DataAccess.Services;
+using Sheepish.Web.Models;
 
 namespace Sheepish.Web.Controllers
 {
@@ -13,11 +14,27 @@ namespace Sheepish.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult List()
         {
             var data = service.GetScenarios();
 
+            return View(data.ConvertAll<ScenarioViewModel>(
+                item => new ScenarioViewModel(item)
+            ));
+        }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult View(Guid id)
+        {
+            var scenario = service.GetScenario(id);
+
+            return View(new ScenarioViewModel(scenario));
         }
     }
 }

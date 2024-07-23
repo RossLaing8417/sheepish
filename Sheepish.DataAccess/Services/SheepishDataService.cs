@@ -12,9 +12,14 @@ namespace Sheepish.DataAccess.Services
             this.context = context;
         }
 
-        List<Scenario> ISheepishDataService.GetScenarios()
+        public List<Scenario> GetScenarios()
         {
             return context.Scenarios.ToList();
+        }
+
+        public Scenario GetScenario(Guid id)
+        {
+            return context.Scenarios.Find(id);
         }
     }
 }

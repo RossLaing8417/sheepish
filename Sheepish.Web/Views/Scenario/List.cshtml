@@ -1,0 +1,41 @@
+﻿@*
+For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<ScenarioViewModel>
+
+    <h1>Sheepish</h1>
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>Label</th>
+                <th>Status</th>
+                <th><a class="btn btn-primary" asp-controller="Scenario" asp-action="Add">New</a></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach(var item in Model)
+            {
+            <tr>
+                <td>@item.Label</td>
+                <td>@item.Status</td>
+                <td>
+                    @if(item.Status == "Configuring")
+                    {
+                    <a class="btn btn-primary" asp-controller="Scenario" asp-action="Edit">Edit</a>
+                    }
+                    else
+                    {
+                    <a class="btn btn-primary" asp-controller="Scenario" asp-action="View">View</a>
+                    }
+                </td>
+            </tr>
+            }
+        </tbody>
+
+    </table>
