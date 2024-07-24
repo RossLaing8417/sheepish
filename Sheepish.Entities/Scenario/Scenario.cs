@@ -16,11 +16,7 @@ namespace Sheepish.Entities
         public string Status { get; set; }
 
         [Required]
-        [MaxLength(32)]
-        public string CalculationMethod { get; set; }
-
-        [Required]
-        public float SheepCostPerKg { get; set; }
+        public float SheepPurchacePricePerKg { get; set; }
 
         [Required]
         public float SheepPurchaceWeight { get; set; }
@@ -28,9 +24,12 @@ namespace Sheepish.Entities
         public float SheepPurchaceWeightVariance { get; set; }
 
         [Required]
-        public float SheepSellWeight { get; set; }
+        public float SheepSalePricePerKg { get; set; }
 
-        public float SheepSellWeightVariance { get; set; }
+        [Required]
+        public float SheepSaleWeight { get; set; }
+
+        public float SheepSaleWeightVariance { get; set; }
 
         [Required]
         public float SheepSlaughterLossPercent { get; set; }
@@ -39,18 +38,19 @@ namespace Sheepish.Entities
         public float ApproxDailyWeightGain { get; set; }
 
         [Required]
-        public float DailyFeedMethod { get; set; }
+        [MaxLength(32)]
+        public string DailyFeedMethod { get; set; }
 
         [Required]
-        public float DailyFeedValue { get; set; }
+        public float DailyFeedAmount { get; set; }
 
         [Required]
-        public float FeedCostPerKg { get; set; }
+        public float FeedPricePerKg { get; set; }
 
         [Required]
-        public float AdditionalMutiCostPerSheep { get; set; }
+        public float AdditionalMutiPricePerSheep { get; set; }
 
         [Required]
-        public float AdditionalVaxCostPerSheep { get; set; }
+        public float AdditionalVaxPricePerSheep { get; set; }
     }
 }

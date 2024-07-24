@@ -26,15 +26,44 @@ namespace Sheepish.Web.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            return View();
+            return View(new ScenarioViewModel().SetDefaults());
+        }
+
+        [HttpGet]
+        public IActionResult Edit(Guid id)
+        {
+            var scenario = service.GetScenario(id);
+            return View(new ScenarioViewModel(scenario));
         }
 
         [HttpGet]
         public IActionResult View(Guid id)
         {
             var scenario = service.GetScenario(id);
-
             return View(new ScenarioViewModel(scenario));
+        }
+
+        [HttpPost]
+        public IActionResult Add(ScenarioViewModel viewmodel)
+        {
+            service.AddScenario(viewmodel.ToEntity());
+            return RedirectToAction("List", "Scenario");
+        }
+
+        [HttpPost]
+        public IActionResult Edit(ScenarioViewModel viewmodel)
+        {
+            var scenario = service.GetScenario(viewmodel.Id);
+            viewmodel.SetEntityProperties(scenario);
+            service.UpdateScenario(scenario);
+            return RedirectToAction("List", "Scenario");
+        }
+
+        [HttpPost]
+        public IActionResult Delete(ScenarioViewModel viewmodel)
+        {
+            service.DeleteScenario(viewmodel.Id);
+            return RedirectToAction("List", "Scenario");
         }
     }
 }

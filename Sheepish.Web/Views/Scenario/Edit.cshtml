@@ -6,9 +6,11 @@ For more information on enabling MVC for empty projects, visit https://go.micros
 
 @model ScenarioViewModel
 
-<h1>New Scenario</h1>
+<h1>Edit Scenario</h1>
 
-<form method="post">
+<form method="post" class="row g-3">
+
+    <input type="hidden" asp-for="Id">
 
     <div class="row g-3 my-3">
 
@@ -131,7 +133,8 @@ For more information on enabling MVC for empty projects, visit https://go.micros
 
     </div>
 
-    <button type="submit" class="btn btn-primary" asp-contoller="Scenario" asp-action="Add">Submit</button>
-    <a class="btn btn-secondary ms-1" asp-contoller="Scenario" asp-action="List">Back</a>
-
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-success ms-1" asp-contoller="Scenario" asp-action="Complete">Complete</button>
+    <button type="submit" class="btn btn-danger ms-1" asp-contoller="Scenario" asp-action="Delete">Delete</button>
+    <button type="submit" class="btn btn-secondary ms-1" asp-contoller="Scenario" asp-action="List">Back</button>
 </form>
