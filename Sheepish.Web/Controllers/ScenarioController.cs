@@ -65,5 +65,12 @@ namespace Sheepish.Web.Controllers
             service.DeleteScenario(viewmodel.Id);
             return RedirectToAction("List", "Scenario");
         }
+
+        [HttpPost]
+        public IActionResult Complete(Guid id)
+        {
+            service.CompleteScenario(id);
+            return RedirectToAction("View", "Scenario", new { id = id });
+        }
     }
 }

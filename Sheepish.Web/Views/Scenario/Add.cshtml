@@ -12,9 +12,13 @@ For more information on enabling MVC for empty projects, visit https://go.micros
 
     <div class="row g-3 my-3">
 
-        <div class="col-md-12">
+        <div class="col-md-8">
             <label for="Label" class="form-label">Label</label>
             <input type="text" class="form-control" required asp-for="Label">
+        </div>
+        <div class="col-md-4">
+            <label for="SheepPurchaceAmount" class="form-label">Sheep Purchaced</label>
+            <input type="number" min="0" step="1" class="form-control" required asp-for="SheepPurchaceAmount">
         </div>
 
         <div class="col-md-4">
@@ -131,7 +135,9 @@ For more information on enabling MVC for empty projects, visit https://go.micros
 
     </div>
 
-    <button type="submit" class="btn btn-primary" asp-contoller="Scenario" asp-action="Add">Submit</button>
-    <a class="btn btn-secondary ms-1" asp-contoller="Scenario" asp-action="List">Back</a>
+    <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary" asp-contoller="Scenario" asp-action="Add">Submit</button>
+        <a class="btn btn-secondary ms-1" asp-contoller="Scenario" asp-action="List">Back</a>
+    </div>
 
 </form>

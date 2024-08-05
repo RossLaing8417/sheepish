@@ -10,6 +10,8 @@ namespace Sheepish.Web.Models
 
         public string Status { get; set; }
 
+        public uint SheepPurchaceAmount { get; set; }
+
         public float SheepPurchacePricePerKg { get; set; }
 
         public float SheepPurchaceWeight { get; set; }
@@ -78,6 +80,7 @@ namespace Sheepish.Web.Models
         public void SetEntityProperties(Scenario scenario)
         {
             scenario.Label = this.Label;
+            scenario.SheepPurchaceAmount = this.SheepPurchaceAmount;
             scenario.SheepPurchacePricePerKg = this.SheepPurchacePricePerKg;
             scenario.SheepPurchaceWeight = this.SheepPurchaceWeight;
             scenario.SheepPurchaceWeightVariance = this.SheepPurchaceWeightVariance;

@@ -40,19 +40,25 @@ namespace Sheepish.DataAccess.Services
             context.SaveChanges();
         }
 
-        public void CompleteScenario(Guid id)
-        {
-            var scenario = GetScenario(id);
-            scenario.Status = "Complete";
-            context.Scenarios.Update(scenario);
-            context.SaveChanges();
-        }
-
         public void DeleteScenario(Guid id)
         {
             var scenario = GetScenario(id);
             context.Scenarios.Remove(scenario);
             context.SaveChanges();
+        }
+
+        public void CompleteScenario(Guid id)
+        {
+            var scenario = GetScenario(id);
+            if (scenario is null)
+            {
+                throw new NullReferenceException($"Guid: {id}");
+            }
+
+            scenario.Status = "Completed";
+            context.Scenarios.Update(scenario);
+
+            // context.SaveChanges();
         }
     }
 }

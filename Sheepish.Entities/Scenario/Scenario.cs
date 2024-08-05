@@ -5,6 +5,7 @@ namespace Sheepish.Entities
     public class Scenario
     {
         [Key]
+        [Required]
         public Guid Id { get; set; }
 
         [Required]
@@ -14,6 +15,9 @@ namespace Sheepish.Entities
         [Required]
         [MaxLength(32)]
         public string Status { get; set; }
+
+        [Required]
+        public uint SheepPurchaceAmount { get; set; }
 
         [Required]
         public float SheepPurchacePricePerKg { get; set; }
