@@ -5,10 +5,10 @@ namespace Sheepish.DataAccess.Services
     public interface ISheepishDataService
     {
         public List<Scenario> GetScenarios();
-        public Scenario GetScenario(Guid id);
+        public Scenario GetScenario(int id);
         public void AddScenario(Scenario scenario);
         public void UpdateScenario(Scenario scenario);
-        public void DeleteScenario(Guid id);
-        public void CompleteScenario(Guid id);
+        public void DeleteScenario(int id);
+        public void CompleteScenario(int id);
     }
 }

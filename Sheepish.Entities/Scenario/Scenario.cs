@@ -6,7 +6,7 @@ namespace Sheepish.Entities
     {
         [Key]
         [Required]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(256)]

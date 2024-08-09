@@ -55,17 +55,16 @@ For more information on enabling MVC for empty projects, visit https://go.micros
         </div>
         <div class="col-md-4">
             <label for="DailyFeedMethod" class="form-label">Daily Feed Method</label>
-            <select class="form-select" required asp-for="DailyFeedMethod"
-                onchange="$('#DailyFeedAmount').parent().parent().children()[this.value === 'FixedAmount' ? 'removeClass' : 'addClass']('d-none')">
+            <select class="form-select" required asp-for="DailyFeedMethod">
                 <option value="PerWeight">Per Weight</option>
                 <option value="FixedAmount">Fix Amount</option>
             </select>
         </div>
         <div class="col-md-4">
-            <label for="DailyFeedAmount" class="form-label d-none">Daily Feed Amount</label>
-            <div class="input-group d-none">
+            <label for="DailyFeedAmount" class="form-label">Daily Feed Amount</label>
+            <div class="input-group">
                 <input type="number" min="0.00" step="any" required class="form-control" asp-for="DailyFeedAmount">
-                <span class="input-group-text">Kg</span>
+                <span class="input-group-text">Kg / %</span>
             </div>
         </div>
 

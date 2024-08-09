@@ -30,14 +30,14 @@ namespace Sheepish.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(Guid id)
+        public IActionResult Edit(int id)
         {
             var scenario = service.GetScenario(id);
             return View(new ScenarioViewModel(scenario));
         }
 
         [HttpGet]
-        public IActionResult View(Guid id)
+        public IActionResult View(int id)
         {
             var scenario = service.GetScenario(id);
             return View(new ScenarioViewModel(scenario));
@@ -67,7 +67,7 @@ namespace Sheepish.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Complete(Guid id)
+        public IActionResult Complete(int id)
         {
             service.CompleteScenario(id);
             return RedirectToAction("View", "Scenario", new { id = id });

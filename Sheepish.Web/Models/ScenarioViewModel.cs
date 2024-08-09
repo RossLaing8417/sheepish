@@ -4,7 +4,7 @@ namespace Sheepish.Web.Models
 {
     public class ScenarioViewModel
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         public string Label { get; set; }
 
@@ -44,6 +44,7 @@ namespace Sheepish.Web.Models
             this.Id = scenario.Id;
             this.Label = scenario.Label;
             this.Status = scenario.Status;
+            this.SheepPurchaceAmount = scenario.SheepPurchaceAmount;
             this.SheepPurchacePricePerKg = scenario.SheepPurchacePricePerKg;
             this.SheepPurchaceWeight = scenario.SheepPurchaceWeight;
             this.SheepPurchaceWeightVariance = scenario.SheepPurchaceWeightVariance;
@@ -69,7 +70,7 @@ namespace Sheepish.Web.Models
             this.SheepSlaughterLossPercent = 50.0f;
             this.ApproxDailyWeightGain = 0.416666667f;
             this.DailyFeedMethod = "PerWeight";
-            this.DailyFeedAmount = 0.3f;
+            this.DailyFeedAmount = 0.03f;
             this.FeedPricePerKg = 3.5f;
             this.AdditionalMutiPricePerSheep = 14.0f;
             this.AdditionalVaxPricePerSheep = 24.0f;

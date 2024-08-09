@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "chart.js@4.4.3",
+      "destination": "wwwroot/lib/chart.js/",
+      "files": [
+        "LICENSE.md",
+        "dist/chart.cjs",
+        "dist/chart.cjs.map",
+        "dist/chart.js",
+        "dist/chart.js.map",
+        "dist/chart.umd.js",
+        "dist/chart.umd.js.map",
+        "dist/helpers.cjs",
+        "dist/helpers.cjs.map",
+        "dist/helpers.js",
+        "dist/helpers.js.map"
+      ]
+    }
+  ]
+}

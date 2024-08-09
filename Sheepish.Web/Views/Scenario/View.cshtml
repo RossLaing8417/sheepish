@@ -8,6 +8,142 @@ For more information on enabling MVC for empty projects, visit https://go.micros
 
 <h1>@Model.Label - @Model.SheepPurchaceAmount Sheep</h1>
 
+<form>
+    <fieldset class="row g-3 my-3" disabled>
+
+        <div class="col-md-3">
+            <label for="SheepPurchacePricePerKg" class="form-label">Price Per Kg @@ Purchace</label>
+            <div class="input-group">
+                <span class="input-group-text">R</span>
+                <input type="number" required class="form-control" asp-for="SheepPurchacePricePerKg">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="SheepPurchaceWeight" class="form-label">Approx. Weight @@ Purchace</label>
+            <div class="input-group">
+                <input type="number" required class="form-control" asp-for="SheepPurchaceWeight">
+                <span class="input-group-text">Kg</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="SheepSalePricePerKg" class="form-label">Price Per Kg @@ Sale</label>
+            <div class="input-group">
+                <span class="input-group-text">R</span>
+                <input type="number" min="0.00" required class="form-control" asp-for="SheepSalePricePerKg">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="SheepSaleWeight" class="form-label">Approx. Weight @@ Sale</label>
+            <div class="input-group">
+                <input type="number" min="0.00" required class="form-control" asp-for="SheepSaleWeight">
+                <span class="input-group-text">Kg</span>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+
+<div id="moredetails" class="accordion mb-3">
+    <div class="accordion-item">
+        <h2 id="moredetailsheading" class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#moredetailsbody">
+                More details...
+            </button>
+        </h2>
+        <div id="moredetailsbody" class="accordion-collapse collapse" data-bs-parent="#moredetails">
+            <div class="accordion-body">
+
+                <fieldset class="row g-3 my-3" disabled>
+
+                    <div class="col-md-3">
+                        <label for="ApproxDailyWeightGain" class="form-label">Approx. Daily Weight Gain</label>
+                        <div class="input-group">
+                            <input type="number" min="0.00" step="any" required class="form-control"
+                                asp-for="ApproxDailyWeightGain">
+                            <span class="input-group-text">Kg</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="SheepPurchaceWeightVariance" class="form-label">Weight Variance @@
+                            Purchace</label>
+                        <div class="input-group">
+                            <input type="number" min="0.00" step="any" required class="form-control"
+                                asp-for="SheepPurchaceWeightVariance">
+                            <span class="input-group-text">Kg</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="SheepSlaughterLossPercent" class="form-label">Slaughter Loss %</label>
+                        <div class="input-group">
+                            <input type="number" max="100.0" min="0.00" step="any" required class="form-control"
+                                asp-for="SheepSlaughterLossPercent">
+                            <span class="input-group-text">%</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="SheepSaleWeightVariance" class="form-label">Weight Variance @@ Sale</label>
+                        <div class="input-group">
+                            <input type="number" min="0.00" step="any" required class="form-control"
+                                asp-for="SheepSaleWeightVariance">
+                            <span class="input-group-text">Kg</span>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <label for="FeedPricePerKg" class="form-label">Feed Price Per Kg</label>
+                        <div class="input-group">
+                            <span class="input-group-text">R</span>
+                            <input type="number" min="0.00" step="0.01" required class="form-control"
+                                asp-for="FeedPricePerKg">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="DailyFeedMethod" class="form-label">Daily Feed Method</label>
+                        <select class="form-select" required asp-for="DailyFeedMethod">
+                            <option value="PerWeight">Per Weight</option>
+                            <option value="FixedAmount">Fix Amount</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="DailyFeedAmount" class="form-label">Daily Feed Amount</label>
+                        <div class="input-group">
+                            <input type="number" min="0.00" step="any" required class="form-control"
+                                asp-for="DailyFeedAmount">
+                            <span class="input-group-text">Kg / %</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="AdditionalMutiPricePerSheep" class="form-label">Additional Muti Price (Per
+                            Sheep)</label>
+                        <div class="input-group">
+                            <span class="input-group-text">R</span>
+                            <input type="number" min="0.00" step="0.01" required class="form-control"
+                                asp-for="AdditionalMutiPricePerSheep">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="AdditionalVaxPricePerSheep" class="form-label">Additional Vax Price (Per
+                            Sheep)</label>
+                        <div class="input-group">
+                            <span class="input-group-text">R</span>
+                            <input type="number" min="0.00" step="0.01" required class="form-control"
+                                asp-for="AdditionalVaxPricePerSheep">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                    </div>
+
+                </fieldset>
+
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="d-flex justify-content-end">
     <a class="btn btn-secondary ms-1" asp-contoller="Scenario" asp-action="List">Back</a>
 </div>
