@@ -10,5 +10,8 @@ namespace Sheepish.DataAccess.Services
         public void UpdateScenario(Scenario scenario);
         public void DeleteScenario(int id);
         public void CompleteScenario(int id);
+
+        public List<DailyRecord> GetDailyRecords(int id);
+
     }
 }

@@ -144,6 +144,34 @@ For more information on enabling MVC for empty projects, visit https://go.micros
     </div>
 </div>
 
-<div class="d-flex justify-content-end">
+<div class="d-flex justify-content-end mb-3">
+    <form method="post">
+        <button type="submit" class="btn btn-danger ms-1" asp-contoller="Scenario" asp-action="Delete"
+            asp-route-id="@Model.Id">Delete</button>
+    </form>
     <a class="btn btn-secondary ms-1" asp-contoller="Scenario" asp-action="List">Back</a>
+</div>
+
+<div class="mb-3">
+    <canvas id="dailycostchart"></canvas>
+    <script>
+        $(_ => $.ajax({
+            type: "GET",
+            url: "/Scenario/DailyRecords/@Model.Id",
+            data: "",
+            success: result => {
+                const element = document.getElementById("dailycostchart");
+                new Chart(element, {
+                    type: 'line',
+                    data: {
+                        labels: result.map(record => record.day),
+                        datasets: [{
+                            label: "Daily costs (R/day)",
+                            data: result.map(record => record.dayCosts),
+                        }]
+                    },
+                });
+            },
+        }));
+    </script>
 </div>

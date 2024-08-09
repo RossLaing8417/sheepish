@@ -72,5 +72,14 @@ namespace Sheepish.Web.Controllers
             service.CompleteScenario(id);
             return RedirectToAction("View", "Scenario", new { id = id });
         }
+
+        [HttpGet]
+        public JsonResult DailyRecords(int id)
+        {
+            var records = service.GetDailyRecords(id);
+            return Json(records.ConvertAll<DailyRecordViewModel>(
+                item => new DailyRecordViewModel(item)
+            ));
+        }
     }
 }

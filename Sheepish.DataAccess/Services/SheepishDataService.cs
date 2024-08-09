@@ -57,10 +57,13 @@ namespace Sheepish.DataAccess.Services
 
             var random = new Random();
             var sheep_records = new List<DailySheepRecord>((int)scenario.SheepPurchaceAmount);
+            var initial_costs = 0.0f;
+            var total_costs = 0.0f;
+            var total_weight = 0.0f;
 
             for (uint day = 1; ; day += 1)
             {
-                float total_weight = 0.0f;
+                total_weight = 0.0f;
 
                 var record = new DailyRecord
                 {
@@ -87,7 +90,9 @@ namespace Sheepish.DataAccess.Services
                         });
 
                         total_weight += weight;
-                        record.DayCosts += InitialSheepCost(scenario, weight) + feed_cost;
+                        record.DayCosts += feed_cost;
+                        initial_costs += InitialSheepCost(scenario, weight) + feed_cost;
+                        total_costs += feed_cost;
                     }
                 }
                 else
@@ -111,6 +116,7 @@ namespace Sheepish.DataAccess.Services
 
                         total_weight += weight;
                         record.DayCosts += feed_cost;
+                        total_costs += feed_cost;
                     }
                 }
 
@@ -125,6 +131,11 @@ namespace Sheepish.DataAccess.Services
             }
 
             scenario.Status = "Completed";
+            scenario.InitialCosts = initial_costs;
+            scenario.TotalCosts = total_costs + initial_costs;
+            scenario.TotalSheepSaleWeight = total_weight;
+            scenario.TotalCarcassSaleWeight = total_weight * (1.0f - (scenario.SheepSlaughterLossPercent / 100));
+            scenario.TotalSalePrice = scenario.TotalCarcassSaleWeight * scenario.SheepSalePricePerKg;
             db_context.Scenarios.Update(scenario);
 
             db_context.SaveChanges();
@@ -160,6 +171,11 @@ namespace Sheepish.DataAccess.Services
                 default:
                     throw new Exception($"Invalid feed method: {scenario.DailyFeedMethod}");
             }
+        }
+
+        public List<DailyRecord> GetDailyRecords(int id)
+        {
+            return db_context.DailyRecords.Where(record => record.ScenarioId == id).ToList();
         }
     }
 }

@@ -33,8 +33,6 @@ namespace Sheepish.Entities
         [Required]
         public float SheepSaleWeight { get; set; }
 
-        public float SheepSaleWeightVariance { get; set; }
-
         [Required]
         public float SheepSlaughterLossPercent { get; set; }
 
@@ -56,5 +54,12 @@ namespace Sheepish.Entities
 
         [Required]
         public float AdditionalVaxPricePerSheep { get; set; }
+
+        // Calculated Fields
+        public float InitialCosts { get; set; }
+        public float TotalCosts { get; set; }
+        public float TotalSheepSaleWeight { get; set; }
+        public float TotalCarcassSaleWeight { get; set; }
+        public float TotalSalePrice { get; set; }
     }
 }

@@ -49,7 +49,6 @@ namespace Sheepish.Web.Models
             this.SheepPurchaceWeight = scenario.SheepPurchaceWeight;
             this.SheepPurchaceWeightVariance = scenario.SheepPurchaceWeightVariance;
             this.SheepSaleWeight = scenario.SheepSaleWeight;
-            this.SheepSaleWeightVariance = scenario.SheepSaleWeightVariance;
             this.SheepSlaughterLossPercent = scenario.SheepSlaughterLossPercent;
             this.ApproxDailyWeightGain = scenario.ApproxDailyWeightGain;
             this.DailyFeedMethod = scenario.DailyFeedMethod;
@@ -87,7 +86,6 @@ namespace Sheepish.Web.Models
             scenario.SheepPurchaceWeightVariance = this.SheepPurchaceWeightVariance;
             scenario.SheepSalePricePerKg = this.SheepSalePricePerKg;
             scenario.SheepSaleWeight = this.SheepSaleWeight;
-            scenario.SheepSaleWeightVariance = this.SheepSaleWeightVariance;
             scenario.SheepSlaughterLossPercent = this.SheepSlaughterLossPercent;
             scenario.ApproxDailyWeightGain = this.ApproxDailyWeightGain;
             scenario.DailyFeedMethod = this.DailyFeedMethod;
